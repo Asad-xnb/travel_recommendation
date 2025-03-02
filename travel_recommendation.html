@@ -8,7 +8,8 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./travel_recommendation.js" defer></script>
   </head>
   <body style="font-family: Helvetica, sans-serif">
     <!-- Background Image and Overlay -->
@@ -35,13 +36,15 @@
         </nav>
 
         <div class="search-container">
-          <input type="text" placeholder="Enter a destination or keyword" />
+          <input type="text" id="search-qry" placeholder="Enter a destination or keyword" />
           <button class="search-btn">Search</button>
           <button class="clear-btn">Clear</button>
+          <div class="search-section">
+            <div class="results-container"></div>
+          </div>
+        </div>
         </div>
       </header>
-
-      <div class="search-error">Please enter a valid search query.</div>
 
       <!-- Hero Section -->
       <section id="home" class="hero">
