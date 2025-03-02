@@ -1,4 +1,3 @@
-/* Reset and Base Styles */
 * {
   margin: 0;
   padding: 0;
@@ -29,7 +28,7 @@ a {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("https://source.unsplash.com/random/1920x1080/?newyork,skyline");
+  background-image: url("");
   background-size: cover;
   background-position: center;
   z-index: -2;
