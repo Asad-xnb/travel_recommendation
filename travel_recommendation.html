@@ -123,129 +123,58 @@
       </section>
 
       <!-- Contact Section -->
-      <section id="contact" class="contact-section">
-        <h2 class="section-title">Contact Us</h2>
-        <div class="contact-content">
-          <div class="contact-info">
-            <h3>Get in Touch</h3>
-            <p>
-              Have questions about our services or need help planning your next
-              adventure? Our team is here to assist you. Reach out to us through
-              any of the following channels:
-            </p>
-
-            <div class="info-item">
-              <i class="fas fa-map-marker-alt"></i>
-              <span>123 Travel Street, Adventure City, TC 12345</span>
+      <section class="contact-section">
+        <div class="background"></div>
+        <div class="overlay"></div>
+        
+        <div class="contact-container">
+            <div class="contact-text">
+                <h1>CONTACT US</h1>
+                <p>Get in touch</p>
             </div>
-
-            <div class="info-item">
-              <i class="fas fa-phone"></i>
-              <span>+1 (555) 123-4567</span>
-            </div>
-
-            <div class="info-item">
-              <i class="fas fa-envelope"></i>
-              <span>info@travelbloom.com</span>
-            </div>
-
-            <div class="info-item">
-              <i class="fas fa-clock"></i>
-              <span>Monday - Friday: 9am - 6pm</span>
-            </div>
-          </div>
-
-          <div class="contact-form">
-            <form id="contactForm">
-              <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" id="name" required />
-              </div>
-
-              <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" required />
-              </div>
-
-              <div class="form-group">
-                <label for="subject">Subject</label>
-                <input type="text" id="subject" required />
-              </div>
-
-              <div class="form-group">
-                <label for="message">Message</label>
-                <textarea id="message" required></textarea>
-              </div>
-
-              <button type="submit" class="submit-btn">Send Message</button>
+            
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input 
+                        type="text" 
+                        id="name" 
+                        name="name" 
+                        placeholder="Enter your name" 
+                        required
+                    >
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        placeholder="Enter your email" 
+                        required
+                    >
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea 
+                        id="message" 
+                        name="message" 
+                        placeholder="Enter your message" 
+                        required
+                    ></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">Submit</button>
             </form>
-          </div>
         </div>
-      </section>
+    </section>
 
       <!-- Footer -->
       <footer>
         <p>&copy; 2023 TravelBloom. All rights reserved.</p>
       </footer>
     </div>
-
-    <script>
-      // Search functionality
-      const searchInput = document.querySelector(".search-container input");
-      const searchBtn = document.querySelector(".search-btn");
-      const clearBtn = document.querySelector(".clear-btn");
-      const searchError = document.querySelector(".search-error");
-
-      // Initially hide the error message
-      searchError.style.display = "none";
-
-      searchBtn.addEventListener("click", () => {
-        if (searchInput.value.trim() === "") {
-          searchError.style.display = "block";
-        } else {
-          searchError.style.display = "none";
-          // Here you would typically handle the search functionality
-          alert(`Searching for: ${searchInput.value}`);
-        }
-      });
-
-      clearBtn.addEventListener("click", () => {
-        searchInput.value = "";
-        searchError.style.display = "none";
-      });
-
-      // Smooth scrolling for navigation links
-      document.querySelectorAll("nav a").forEach((anchor) => {
-        anchor.addEventListener("click", function (e) {
-          e.preventDefault();
-
-          const targetId = this.getAttribute("href");
-          const targetElement = document.querySelector(targetId);
-
-          window.scrollTo({
-            top: targetElement.offsetTop,
-            behavior: "smooth",
-          });
-        });
-      });
-
-      // Form submission
-      const contactForm = document.getElementById("contactForm");
-
-      contactForm.addEventListener("submit", (e) => {
-        e.preventDefault();
-
-        const name = document.getElementById("name").value;
-        const email = document.getElementById("email").value;
-        const subject = document.getElementById("subject").value;
-        const message = document.getElementById("message").value;
-
-        // Here you would typically handle the form submission
-        alert(
-          `Thank you for your message, ${name}! We will get back to you soon.`
-        );
-        contactForm.reset();
-      });
-    </script>
   </body>
 </html>
