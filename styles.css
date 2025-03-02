@@ -1,3 +1,4 @@
+/* Reset and Base Styles */
 * {
   margin: 0;
   padding: 0;
@@ -14,38 +15,38 @@ a {
   color: inherit;
 }
 
-/* Hero Section */
-.hero {
-  position: relative;
-  height: 100vh;
-  width: 100%;
-  overflow: hidden;
-}
-
-.hero-bg {
-  position: absolute;
+/* Background Image */
+.bg-image {
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("");
+  background-image: url("./andre-benz-CR0E20Of7yU-unsplash.jpg");
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
   z-index: -2;
 }
 
 .overlay {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background: linear-gradient(
     to right,
-    rgba(15, 118, 110, 0.8),
-    rgba(13, 148, 136, 0.5)
+    rgba(17, 56, 48, 0.8),
+    rgba(13, 148, 137, 0)
   );
   z-index: -1;
+}
+
+/* Content Container */
+.content-container {
+  position: relative;
+  z-index: 1;
 }
 
 /* Header */
@@ -54,8 +55,12 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 20px 50px;
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 10;
+  background-color: rgba(25, 39, 39, 0.9);
 }
 
 .logo {
@@ -137,39 +142,41 @@ nav ul li a:hover {
   color: white;
 }
 
-/* Hero Content */
+/* Hero Section */
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 0 50px;
+}
+
 .hero-content {
-  position: absolute;
-  top: 50%;
-  left: 50px;
-  transform: translateY(-50%);
   max-width: 600px;
-  z-index: 10;
+  margin-left: 150px;
 }
 
 .hero-title {
-  border-left: 4px solid #ef4444;
-  padding-left: 20px;
   color: white;
-  font-size: 60px;
+  font-size: 5rem;
   font-weight: bold;
   line-height: 1.1;
   margin-bottom: 20px;
 }
 
 .hero-description {
-  border-left: 4px solid #ef4444;
-  padding-left: 20px;
   color: white;
-  font-size: 18px;
+  font-size: 1.5rem;
   line-height: 1.5;
+  margin-top: 30px;
   margin-bottom: 30px;
 }
 
 .cta-button {
+  margin-top: 30px;
   background-color: #0d9488;
   color: white;
   border: none;
+  border-radius: 5px;
   padding: 12px 30px;
   font-weight: bold;
   font-size: 16px;
@@ -181,11 +188,22 @@ nav ul li a:hover {
   background-color: #0f766e;
 }
 
+.line {
+  background-color: white;
+  height: 40%;
+  width: 3px;
+  position: fixed;
+  left: 65px;
+  top: 37%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
 /* Social Media */
 .social-media {
-  position: absolute;
+  position: fixed;
   left: 50px;
-  top: 50%;
+  top: 85%;
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
@@ -195,7 +213,7 @@ nav ul li a:hover {
 
 .social-media a {
   color: white;
-  font-size: 20px;
+  font-size: 35px;
   transition: color 0.3s;
 }
 
@@ -205,23 +223,74 @@ nav ul li a:hover {
 
 /* About Us Section */
 .about-section {
+    height: 100vh;
   padding: 100px 50px;
-  background-color: #f8fafc;
+  margin-left: 150px;
 }
 
-.section-title {
-  font-size: 36px;
-  color: #0f766e;
-  margin-bottom: 20px;
-  text-align: center;
+.about-title {
+  font-size: 4rem;
+
+  color: white;
+  margin: 0 auto;
 }
 
 .about-content {
-  display: flex;
-  justify-content: space-between;
-  gap: 50px;
-  max-width: 1200px;
-  margin: 0 auto;
+  font-size: 1.2rem;
+}
+
+.dark-bg {
+    font-family: inherit;
+    background-color: rgba(0,0,0, 0.3);
+    color: white;
+    padding: 30px;
+    margin-top: 30px ;
+    border-radius: 10px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.team {
+    margin-top: 30px;
+    padding: 30px;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 20px;
+    color: white;
+    
+}
+
+#team-title{
+    width: 20%;
+}
+
+.team h3 {
+    color: white;
+    font-family: Helvetica, sans-serif;
+    font-size: 5rem;
+    margin-bottom: 20px;
+}
+
+.team .card {
+    background-color: rgba(0,0,0, 0.3);
+    border-radius: 8px;
+    padding: 16px;
+    display: flex;
+    gap: 20px;
+}
+
+.team .card p {
+    font-size: 1.2rem;
+    color: #c3e6ff;
+}
+
+.designation {
+    font-size: 1.2rem;
+    text-align: center;
+    margin-top: 20px;
+    padding: 12px;
+    border: solid 1px white;
+    border-radius: 8px;
+    background-color: #274385;
 }
 
 .about-text {
@@ -256,7 +325,7 @@ nav ul li a:hover {
 /* Contact Section */
 .contact-section {
   padding: 100px 50px;
-  background-color: #0f766e;
+  background-color: rgba(15, 118, 110, 0.8);
   color: white;
 }
 
@@ -335,7 +404,7 @@ nav ul li a:hover {
 
 /* Footer */
 footer {
-  background-color: #0c4a45;
+  background-color: rgba(12, 74, 69, 0.8);
   color: white;
   text-align: center;
   padding: 20px;
@@ -377,7 +446,6 @@ footer {
   }
 
   .hero-content {
-    left: 20px;
     max-width: 90%;
   }
 
